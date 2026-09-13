@@ -8,3 +8,5 @@ Os textos comerciais estão em `COPYWRITING.md`. A identidade é aplicada nas p�
 O formulário prepara uma mensagem no WhatsApp existente da empresa, (11) 91619-4867. O visitante deve confirmar o envio no WhatsApp; não há armazenamento nem envio por servidor. Links como `contato.html?servico=portaria#formulario` selecionam o serviço automaticamente.
 
 Para visualizar, abra `index.html` no navegador. Para publicar, envie as três páginas, `style.css`, `script.js` e a pasta `assets` à hospedagem.
+
+No VS Code, pressione F5 e selecione **Abrir site DDPAVI no Edge**. A configuração abre o arquivo local sem depender de um servidor em `localhost:8080`. Este projeto estático não requer `npm install` ou `npm run dev`.

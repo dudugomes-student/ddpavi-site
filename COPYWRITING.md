@@ -4,7 +4,7 @@
 
 **Chamada:** Seu espaço bem cuidado. Sua rotina mais tranquila.
 
-Serviços gerais, portaria, jardinagem e controle de pragas em um só parceiro. Soluções terceirizadas para empresas, indústrias e condomínios em Barueri e região.
+Serviços gerais, portaria, jardinagem e controle de pragas em um só parceiro. Soluções terceirizadas para empresas, indústrias e condomínios com sede em Jandira e atendimento em todo o Brasil.
 
 **CTAs:** Solicitar orçamento · Conhecer serviços.
 
@@ -16,7 +16,7 @@ A DDPAVI Serviços Integrados nasce da ampliação da nossa atuação em control
 
 Nosso objetivo é simplificar a rotina de quem administra espaços. Avaliamos as características do local e as necessidades da operação para propor serviços pontuais ou contínuos, com escopo claro e atendimento próximo.
 
-Atendemos empresas, indústrias, comércios e condomínios em Barueri e região, mantendo também o atendimento residencial em nossos serviços especializados. Em cada entrega, valorizamos responsabilidade, comunicação clara e respeito às pessoas e ao patrimônio.
+Atendemos empresas, indústrias, comércios e condomínios com sede em Jandira e atendimento em todo o território nacional, mantendo também o atendimento residencial em nossos serviços especializados. Em cada entrega, valorizamos responsabilidade, comunicação clara e respeito às pessoas e ao patrimônio.
 
 ## Serviços Gerais
 
