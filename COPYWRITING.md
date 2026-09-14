@@ -2,7 +2,7 @@
 
 ## Hero
 
-**Chamada:** Seu espaço bem cuidado. Sua rotina mais tranquila.
+**Chamada:** Empresa licenciada com ANVISA / Vigilância Sanitária, IBAMA, CETESB e com responsável técnico habilitado. Segurança e confiança em cada serviço.
 
 Serviços gerais, portaria, jardinagem e controle de pragas em um só parceiro. Soluções terceirizadas para empresas, indústrias e condomínios com sede em Jandira e atendimento em todo o Brasil.
 
