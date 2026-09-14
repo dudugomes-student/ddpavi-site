@@ -942,8 +942,8 @@ body {
 }
 .hero-conteudo, .hero-interno-conteudo { padding-block: 64px; }
 .hero-interno-conteudo { flex-direction: column; justify-content: center; align-items: flex-start; }
-.facility-card { border-top: 3px solid var(--azul-300); }
-.facility-card .servico-conteudo { display: flex; flex-direction: column; height: 100%; }
+.facility-card { display: flex; flex-direction: column; border-top: 3px solid var(--azul-300); }
+.facility-card .servico-conteudo { display: flex; flex: 1; flex-direction: column; height: auto; }
 .facility-topo { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 26px; }
 .facility-topo .servico-numero { margin: 0; }
 .facility-topo svg { width: 48px; height: 48px; flex: 0 0 auto; color: var(--azul-300); }
