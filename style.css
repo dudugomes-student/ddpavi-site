@@ -302,7 +302,8 @@ p { line-height: 1.75; }
 .diferencial-item h3, .valor-item h3 { margin-bottom: 6px; font-size: 1rem; }
 .diferencial-item p, .valor-item p { margin: 0; color: rgba(255,255,255,.52); font-size: .8rem; }
 
-.ambientes-grade, .proposito-grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.ambientes-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.proposito-grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .ambiente-card, .proposito-card {
     position: relative;
     min-height: 250px;
@@ -592,7 +593,8 @@ p { line-height: 1.75; }
     .hero { min-height: 690px; }
     .hero-interno { min-height: 530px; }
     .hero-sobreposicao, .cta-sobreposicao { background: linear-gradient(90deg, rgba(3,17,31,.97), rgba(3,17,31,.78)); }
-    .hero h1, .hero-interno h1 { font-size: clamp(2.6rem, 12vw, 4.2rem); }
+    .hero h1 { font-size: clamp(1.85rem, 6.5vw, 2.4rem); line-height: 1.18; }
+    .hero-interno h1 { font-size: clamp(1.5rem, 5vw, 2rem); line-height: 1.24; }
     .hero-informacoes { grid-template-columns: 1fr; }
     .introducao, .servicos, .diferenciais, .ambientes, .processo, .sobre-apresentacao, .proposito, .valores, .clientes, .sobre-servicos, .regiao-atendimento, .canais-contato, .contato, .localizacao { padding: 78px 0; }
     .secao-cabecalho, .introducao-conteudo, .diferenciais-conteudo, .sobre-apresentacao-conteudo, .valores-conteudo, .contato-conteudo, .regiao-atendimento-conteudo { grid-template-columns: 1fr; display: grid; gap: 30px; }
