@@ -2,7 +2,7 @@
 
 ## Hero
 
-**Chamada:** Empresa licenciada com ANVISA / Vigilância Sanitária, IBAMA, CETESB e com responsável técnico habilitado. Segurança e confiança em cada serviço.
+**Chamada:** Soluções integradas em facilities e controle de pragas para o seu patrimônio.
 
 Serviços gerais, portaria, jardinagem e controle de pragas em um só parceiro. Soluções terceirizadas para empresas, indústrias e condomínios com sede em Jandira e atendimento em todo o Brasil.
 
@@ -10,7 +10,7 @@ Serviços gerais, portaria, jardinagem e controle de pragas em um só parceiro. 
 
 ## Sobre nós
 
-**Chamada:** Nossa atuação cresce. O compromisso com o cuidado permanece.
+**Chamada:** Empresa licenciada com ANVISA / Vigilância Sanitária, IBAMA, CETESB e com responsável técnico habilitado. Segurança e confiança em cada serviço.
 
 A DDPAVI Serviços Integrados nasce da ampliação da nossa atuação em controle de pragas para oferecer um cuidado mais completo aos ambientes. Hoje, reunimos serviços gerais, portaria e controle de acesso, jardinagem e paisagismo, além das soluções de proteção e higiene que fazem parte da nossa trajetória.
 
