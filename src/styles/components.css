@@ -98,11 +98,6 @@
   .service-row__tag { grid-column: 1; grid-row: 2; }
   .service-row__go { grid-column: 2; grid-row: 1 / span 2; width: 2.8rem; height: 2.8rem; }
 }
-.others { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-block-start: clamp(2.5rem, 5vw, 4rem); background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-m); overflow: hidden; }
-.others li { padding: 1.5rem; background: var(--canvas); }
-.others h3 { font-size: 1.15rem; }
-.others p { margin-block-start: .4rem; color: var(--text-3); font-size: .93rem; line-height: 1.5; }
-@media (max-width: 760px) { .others { grid-template-columns: 1fr; } }
 
 /* ---------- Segmentos ---------- */
 .segments { display: grid; grid-template-columns: repeat(2, 1fr); border-block-start: 1px solid var(--line-strong); }
@@ -234,3 +229,5 @@
 .hero-card__list li::before { content: ''; flex: none; width: .6rem; height: .6rem; border-radius: 50%; background: var(--red-500); }
 .hero-card__cta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; border-radius: 99rem; background: var(--red-600); font-weight: 600; }
 .hero-card__cta svg { width: 1.2rem; height: 1.2rem; }
+.subhead { margin-block: clamp(3rem, 6vw, 5rem) clamp(1.2rem, 2.5vw, 2rem); }
+.subhead .lead { margin-block-start: .6rem; }

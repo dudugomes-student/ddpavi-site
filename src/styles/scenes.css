@@ -2,16 +2,16 @@
 .hero { min-height: 100svh; display: flex; align-items: center; padding-block: calc(var(--header-h) + 2rem) 3rem; }
 .hero__inner { position: relative; z-index: 2; display: grid; gap: clamp(1.2rem, 3vw, 2rem); }
 .hero h1 { font-size: clamp(3.4rem, 19vw, 7rem); line-height: .84; }
-@media (min-width: 901px) { .hero h1 { font-size: clamp(6rem, 15.5vw, 15rem); } }
+@media (min-width: 901px) { .hero h1 { font-size: clamp(5rem, 10.5vw, 11rem); } }
 .hero h1 .dot { color: var(--red-500); }
 .hero__foot { display: grid; gap: 1.6rem; max-width: 38rem; margin-block-start: clamp(.8rem, 3vw, 2.4rem); }
 .hero__sub { margin: 0; }
-.reticle { position: absolute; z-index: 1; left: 80%; top: 40%; width: 0; height: 0; pointer-events: none; will-change: transform; }
+.reticle { --span: clamp(12rem, 22vw, 22rem); position: absolute; z-index: 1; left: 80%; top: 40%; width: 0; height: 0; pointer-events: none; will-change: transform; }
 html.js:not(.reduce-motion) .reticle:not([data-in]), html.js:not(.reduce-motion) .reticle__ring:not([data-in]), html.js:not(.reduce-motion) .reticle__tag:not([data-in]) { opacity: 0; }
 html.motion-timeout .reticle, html.motion-timeout .reticle__ring, html.motion-timeout .reticle__tag { opacity: 1 !important; transform: none; }
 .reticle__line { position: absolute; background: rgb(60 100 230 / .42); }
-.reticle__line--h { left: -150vw; width: 300vw; top: 0; height: 1px; }
-.reticle__line--v { top: -150vh; height: 300vh; left: 0; width: 1px; }
+.reticle__line--h { left: calc(var(--span) * -1); width: calc(var(--span) * 2); top: 0; height: 1px; }
+.reticle__line--v { top: calc(var(--span) * -1); height: calc(var(--span) * 2); left: 0; width: 1px; }
 .reticle__ring { position: absolute; left: 0; top: 0; translate: -50% -50%; border-radius: 50%; border: 1px solid rgb(60 100 230 / .6); }
 .reticle__ring--1 { width: 3.2rem; aspect-ratio: 1; border: 2px solid var(--red-500); }
 .reticle__ring--2 { width: clamp(9rem, 16vw, 15rem); aspect-ratio: 1; border-width: 3px; border-color: var(--blue-600); }
@@ -21,7 +21,8 @@ html.motion-timeout .reticle, html.motion-timeout .reticle__ring, html.motion-ti
 .scroll-cue i { width: 1px; height: 2.4rem; background: linear-gradient(var(--red-500), transparent); transform-origin: top; }
 html:not(.reduce-motion) .scroll-cue i { animation: cue 1.8s var(--ease-out) infinite; }
 @keyframes cue { 0% { scale: 1 0; } 50% { scale: 1 1; } 100% { scale: 1 1; opacity: 0; } }
-@media (max-width: 760px) { .hero { align-items: flex-start; } .scroll-cue { display: none; } .reticle__ring--3 { width: 22rem; } }
+@media (max-width: 900px) { .hero__inner { padding-block-end: 12rem; } .reticle { --span: 7rem; } .reticle__ring--2 { width: 7rem; } .reticle__ring--3 { width: 12rem; } }
+@media (max-width: 760px) { .hero { align-items: flex-start; } .scroll-cue { display: none; } }
 
 /* ===== Cena 2: revelação UV ===== */
 .uv { position: relative; height: 280svh; border-block-start: 1px solid var(--line); background: #060d17; }

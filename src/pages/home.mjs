@@ -84,9 +84,20 @@ export const home = () => ({
         </span>
       </a>`)}
     </div>
-    <ul class="others" data-stagger="0.08">
-      ${otherServices.map((o) => html`<li data-motion="rise"><h3>${o.title}</h3><p>${o.text}</p></li>`)}
-    </ul>
+    <div class="subhead">
+      <p class="eyebrow">Serviços integrados</p>
+      <p class="lead">Além do controle de pragas, a DDPavi oferece outros serviços integrados.</p>
+    </div>
+    <div class="service-list">
+      ${otherServices.map((o) => html`<a class="service-row" href="${waLink(`Olá! Vim pelo site da DDPavi e gostaria de um orçamento de ${o.title.toLowerCase()}.`)}" target="_blank" rel="noopener" data-motion="rise">
+        <h3 class="service-row__title">${o.title}</h3>
+        <span class="service-row__tag">${o.text}</span>
+        <span class="service-row__go" aria-hidden="true">
+          <span class="lock lock--1" data-motion="lock"></span><span class="lock lock--2" data-motion="lock" data-delay="0.08"></span>
+          ${icon('arrow')}
+        </span>
+      </a>`)}
+    </div>
   </div>
 </section>
 

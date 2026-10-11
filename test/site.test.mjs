@@ -2,14 +2,15 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { build } from '../build.mjs';
 import { html, raw } from '../src/lib/html.mjs';
 import { waLink } from '../src/lib/seo.mjs';
 
 await build();
-const dist = new URL('../dist/', import.meta.url).pathname;
+const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 const walk = async (d) => (await Promise.all((await readdir(d)).map(async (n) => { const p = join(d, n); return (await stat(p)).isDirectory() ? walk(p) : [p]; }))).flat();
-const pages = (await walk(dist)).filter((f) => f.endsWith('.html') && !/\/(sobre|contato)\.html$/.test(f));
+const pages = (await walk(dist)).filter((f) => f.endsWith('.html') && !/[\\/](sobre|contato)\.html$/.test(f));
 const read = (f) => readFile(f, 'utf8');
 
 test('html escapa interpolações', () => {

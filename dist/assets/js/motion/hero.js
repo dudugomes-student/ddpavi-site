@@ -1,22 +1,29 @@
-// Cena 1 — "Busca": a mira varre o hero, trava no ponto final do título e acompanha o ponteiro de leve.
+// Cena 1 — "Busca": a mira varre o hero, trava no espaço livre ao lado do título (abaixo dele no celular) e acompanha o ponteiro de leve.
 import { animate } from './engine.js';
 import { reducedMotion } from './preferences.js';
 
 export function initHero() {
   const hero = document.querySelector('.hero');
   const ret = hero?.querySelector('.reticle');
-  const dot = hero?.querySelector('h1 .dot');
-  if (!hero || !ret || !dot) return;
-  const line = dot.closest('.line');
+  const h1 = hero?.querySelector('h1');
+  const inner = hero?.querySelector('.hero__inner');
+  if (!hero || !ret || !h1 || !inner) return;
   const rings = [...ret.querySelectorAll('.reticle__ring')];
   const tag = ret.querySelector('.reticle__tag');
+  const range = document.createRange();
 
   const place = () => {
-    const h = hero.getBoundingClientRect(), d = dot.getBoundingClientRect();
-    const dy = line?.__m?.y || 0;                      // desconta a queda em andamento do título
-    ret.style.left = `${d.left + d.width / 2 - h.left}px`;
-    const fs = parseFloat(getComputedStyle(dot).fontSize);
-    ret.style.top = `${d.top + fs * 0.9 - h.top - dy}px`;   // centro visual do ponto final (linha de base)
+    const h = hero.getBoundingClientRect(), b = h1.getBoundingClientRect(), r = inner.getBoundingClientRect();
+    if (matchMedia('(min-width: 901px)').matches) {
+      // espaço próprio: entre a direita do texto mais largo do título e a direita do conteúdo
+      const textRight = Math.max(...[...h1.querySelectorAll('.line')].map((l) => { range.selectNodeContents(l); return range.getBoundingClientRect().right; }));
+      ret.style.left = `${(textRight + r.right) / 2 - h.left}px`;
+      ret.style.top = `${b.top + b.height / 2 - h.top}px`;
+    } else {
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      ret.style.left = `${h.width / 2}px`;
+      ret.style.top = `${r.bottom - 5 * rem - h.top}px`;   // faixa reservada abaixo dos botões
+    }
   };
   place();
   addEventListener('resize', place);
@@ -25,7 +32,7 @@ export function initHero() {
   if (reducedMotion()) { ret.dataset.in = ''; rings.forEach((r) => { r.dataset.in = ''; }); if (tag) tag.dataset.in = ''; return; }
 
   const vw = Math.min(innerWidth, 900);
-  const wp = [[0.42, -0.34], [-0.38, 0.26], [0.26, 0.4], [-0.16, -0.18]].map(([a, b]) => [a * vw, b * Math.min(innerHeight, 700)]);
+  const wp = [[0.1, -0.12], [-0.09, 0.1], [0.07, 0.14], [-0.05, -0.06]].map(([a, b]) => [a * vw, b * Math.min(innerHeight, 700)]);
   animate(ret, { x: [wp[0][0], wp[0][0]], y: [wp[0][1], wp[0][1]] }, { stiffness: 1, damping: 1 });
   ret.dataset.in = '';
   rings.forEach((r) => { r.dataset.in = ''; });
