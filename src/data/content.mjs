@@ -4,9 +4,9 @@ export const services = [
     slug: 'dedetizacao',
     title: 'Dedetização',
     tagline: 'Baratas, formigas e outros insetos',
-    metaTitle: 'Dedetização em Jandira e região',
+    metaTitle: 'Dedetização na Grande São Paulo',
     metaDescription:
-      'Dedetização profissional em Jandira e região para condomínios, empresas e residências. Equipe com EPI completo e responsável técnico habilitado.',
+      'Dedetização profissional na Grande São Paulo para condomínios, empresas e residências. Equipe com EPI completo e responsável técnico habilitado.',
     lead:
       'Insetos rastejantes e voadores contaminam alimentos, espalham sujeira e viram problema de saúde e de imagem. Fazemos a dedetização com equipe uniformizada, EPI completo e responsável técnico habilitado.',
     signsTitle: 'Sinais de que você precisa de dedetização',
@@ -32,9 +32,9 @@ export const services = [
     slug: 'desratizacao',
     title: 'Desratização',
     tagline: 'Ratos e roedores',
-    metaTitle: 'Desratização em Jandira e região',
+    metaTitle: 'Desratização na Grande São Paulo',
     metaDescription:
-      'Desratização profissional em Jandira e região: controle de ratos e roedores em condomínios, empresas, galpões e residências.',
+      'Desratização profissional na Grande São Paulo: controle de ratos e roedores em condomínios, empresas, galpões e residências.',
     lead:
       'Roedores roem fios e embalagens, contaminam alimentos e podem transmitir doenças como a leptospirose. O controle exige identificar por onde entram e por que ficam, não só aplicar o produto.',
     signsTitle: 'Sinais de que há roedores',
@@ -60,9 +60,9 @@ export const services = [
     slug: 'descupinizacao',
     title: 'Descupinização',
     tagline: 'Cupins em madeira e estruturas',
-    metaTitle: 'Descupinização em Jandira e região',
+    metaTitle: 'Descupinização na Grande São Paulo',
     metaDescription:
-      'Descupinização em Jandira e região: avaliação e tratamento para cupins em móveis, portas, forros e estruturas de madeira.',
+      'Descupinização na Grande São Paulo: avaliação e tratamento para cupins em móveis, portas, forros e estruturas de madeira.',
     lead:
       'O cupim trabalha por dentro da madeira e, quando aparece, o estrago costuma estar adiantado. Móveis, portas, batentes, forros e estruturas de madeira são os mais afetados.',
     signsTitle: 'Sinais de que há cupins',
@@ -88,9 +88,9 @@ export const services = [
     slug: 'escorpioes',
     title: 'Controle de escorpiões',
     tagline: 'Prevenção e aplicação técnica',
-    metaTitle: 'Controle de escorpiões em Jandira e região',
+    metaTitle: 'Controle de escorpiões na Grande São Paulo',
     metaDescription:
-      'Controle de escorpiões em Jandira e região: aplicação técnica e orientações para tornar o ambiente menos atrativo. Atendimento a condomínios, empresas e residências.',
+      'Controle de escorpiões na Grande São Paulo: aplicação técnica e orientações para tornar o ambiente menos atrativo. Atendimento a condomínios, empresas e residências.',
     lead:
       'Escorpiões se escondem em locais escuros e úmidos, entre entulhos, madeira e frestas, e podem causar acidentes graves, principalmente com crianças e idosos. O controle combina aplicação técnica e orientações para o ambiente ficar menos atrativo.',
     signsTitle: 'Sinais de risco',
@@ -116,9 +116,9 @@ export const services = [
     slug: 'limpeza-de-caixa-dagua',
     title: "Limpeza de caixa d'água",
     tagline: 'Higienização periódica',
-    metaTitle: "Limpeza de caixa d'água em Jandira e região",
+    metaTitle: "Limpeza de caixa d'água na Grande São Paulo",
     metaDescription:
-      "Limpeza de caixa d'água em Jandira e região para condomínios, empresas e residências. Equipe técnica e orientações de manutenção.",
+      "Limpeza de caixa d'água na Grande São Paulo para condomínios, empresas e residências. Equipe técnica e orientações de manutenção.",
     lead:
       "A caixa d'água acumula sujeira, sedimentos e resíduos com o tempo e pode comprometer a qualidade da água de casa, do condomínio ou da empresa.",
     signsTitle: 'Quando limpar',
@@ -146,9 +146,9 @@ export const pest = {
   slug: 'controle-de-pragas',
   title: 'Controle de pragas',
   text: 'Dedetização, desratização, descupinização, escorpiões e caixa d’água.',
-  metaTitle: 'Controle de pragas em Jandira e região',
+  metaTitle: 'Controle de pragas na Grande São Paulo',
   metaDescription:
-    'Controle de pragas em Jandira e região: dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d’água, com licenças ANVISA, IBAMA e CETESB e responsável técnico habilitado.',
+    'Controle de pragas na Grande São Paulo: dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d’água, com licenças ANVISA, IBAMA e CETESB e responsável técnico habilitado.',
   lead: 'Cada praga pede um método. Começamos entendendo o ambiente para indicar o serviço certo, com equipe uniformizada, EPI completo e responsável técnico habilitado.',
 };
 
@@ -158,9 +158,9 @@ export const fronts = [
     slug: 'servicos-gerais',
     title: 'Serviços gerais',
     text: 'Limpeza, manutenção preventiva e conservação.',
-    metaTitle: 'Serviços gerais em Jandira e região',
+    metaTitle: 'Serviços gerais na Grande São Paulo',
     metaDescription:
-      'Serviços gerais em Jandira e região com a DDPavi Serviços Integrados: limpeza, manutenção preventiva e conservação. Peça seu orçamento pelo WhatsApp.',
+      'Serviços gerais na Grande São Paulo com a DDPavi Serviços Integrados: limpeza, manutenção preventiva e conservação. Peça seu orçamento pelo WhatsApp.',
     // CONFIRMAR: lead, "quando contratar" e respostas abaixo são definição geral do serviço, não detalhes da operação da DDPavi.
     lead: 'Limpeza, manutenção preventiva e conservação para manter o ambiente em ordem no dia a dia.',
     signsEyebrow: 'Quando contratar',
@@ -179,9 +179,9 @@ export const fronts = [
     slug: 'portaria-e-controle-de-acesso',
     title: 'Portaria e controle de acesso',
     text: 'Equipe para condomínios e empresas.',
-    metaTitle: 'Portaria e controle de acesso em Jandira e região',
+    metaTitle: 'Portaria e controle de acesso na Grande São Paulo',
     metaDescription:
-      'Portaria e controle de acesso em Jandira e região: equipe para condomínios e empresas. Peça seu orçamento pelo WhatsApp com a DDPavi Serviços Integrados.',
+      'Portaria e controle de acesso na Grande São Paulo: equipe para condomínios e empresas. Peça seu orçamento pelo WhatsApp com a DDPavi Serviços Integrados.',
     // CONFIRMAR: lead, "quando contratar" e respostas abaixo são definição geral do serviço, não detalhes da operação da DDPavi.
     lead: 'Equipe de portaria e controle de acesso para condomínios e empresas: recepção de pessoas e controle de quem entra e sai do local.',
     signsEyebrow: 'Quando contratar',
@@ -200,9 +200,9 @@ export const fronts = [
     slug: 'jardinagem-e-paisagismo',
     title: 'Jardinagem e paisagismo',
     text: 'Cuidado contínuo de áreas verdes.',
-    metaTitle: 'Jardinagem e paisagismo em Jandira e região',
+    metaTitle: 'Jardinagem e paisagismo na Grande São Paulo',
     metaDescription:
-      'Jardinagem e paisagismo em Jandira e região: cuidado contínuo de áreas verdes. Peça seu orçamento pelo WhatsApp com a DDPavi Serviços Integrados.',
+      'Jardinagem e paisagismo na Grande São Paulo: cuidado contínuo de áreas verdes. Peça seu orçamento pelo WhatsApp com a DDPavi Serviços Integrados.',
     // CONFIRMAR: lead, "quando contratar" e respostas abaixo são definição geral do serviço, não detalhes da operação da DDPavi.
     lead: 'Cuidado contínuo de áreas verdes, para jardins, gramados e canteiros seguirem bem cuidados.',
     signsEyebrow: 'Quando contratar',
@@ -276,6 +276,6 @@ export const homeFaq = [
   },
   {
     q: 'Quais áreas vocês atendem?',
-    a: 'Jandira e região. Informe o endereço no pedido de orçamento para confirmarmos o atendimento no seu local.',
+    a: 'Grande São Paulo. Informe o endereço no pedido de orçamento para confirmarmos o atendimento no seu local.',
   },
 ];

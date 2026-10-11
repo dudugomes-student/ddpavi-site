@@ -7,7 +7,7 @@ export const site = {
   locale: 'pt-BR',
   city: 'Jandira',
   region: 'SP',
-  area: 'Jandira e região',
+  area: 'Grande São Paulo',
   tagline: 'Serviços no alvo.',
   whatsapp: { number: '5511916194867', display: '(11) 91619-4867' },
   phone: { tel: '+551147891000', display: '(11) 4789-1000' },

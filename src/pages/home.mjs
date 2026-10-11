@@ -12,9 +12,9 @@ const casaServicos = ['dedetizacao', 'desratizacao', 'escorpioes', 'descupinizac
 
 export const home = () => ({
   path: '/',
-  title: 'Serviços integrados em Jandira e região — Serviços no alvo',
+  title: 'Serviços integrados na Grande São Paulo — Serviços no alvo',
   description:
-    'Serviços integrados em Jandira e região: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. Peça seu orçamento pelo WhatsApp.',
+    'Serviços integrados na Grande São Paulo: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. Peça seu orçamento pelo WhatsApp.',
   schema: [localBusiness(), faqSchema(homeFaq)],
   body: html`
 <section class="hero">
@@ -27,13 +27,13 @@ export const home = () => ({
     <span class="reticle__tag">Alvo travado</span>
   </div>
   <div class="container hero__inner">
-    <p class="eyebrow" data-motion="fade" data-delay="0.1"><span><b>Serviços integrados</b> em ${site.area}</span></p>
+    <p class="eyebrow" data-motion="fade" data-delay="0.1"><span><b>Serviços integrados</b> na ${site.area}</span></p>
     <h1>
       <span class="line" data-motion="drop" data-delay="0.3">Serviços</span>
       <span class="line line--red" data-motion="drop" data-delay="0.62">no alvo<span class="dot">.</span></span>
     </h1>
     <div class="hero__foot">
-      <p class="hero__sub" data-motion="rise" data-delay="1.0"><strong>Controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo</strong>: quatro frentes da mesma empresa, em ${site.area}.</p>
+      <p class="hero__sub" data-motion="rise" data-delay="1.0"><strong>Controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo</strong>: quatro frentes da mesma empresa, na ${site.area}.</p>
       <div class="btn-row" data-motion="rise" data-delay="1.15">
         <a class="btn btn--red" href="${WA}" target="_blank" rel="noopener">${icon('chat')} Pedir orçamento no WhatsApp</a>
         <a class="btn btn--ghost" href="${telLink()}">${icon('phone')} ${site.phone.display}</a>

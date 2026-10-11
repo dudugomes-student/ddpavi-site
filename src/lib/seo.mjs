@@ -19,10 +19,10 @@ export const localBusiness = () => ({
   image: abs('/img/og.png'),
   logo: abs('/img/logo.png'),
   telephone: [site.phone.tel, `+${site.whatsapp.number}`],
-  areaServed: [{ '@type': 'City', name: site.city }, { '@type': 'Country', name: 'Brasil' }],
+  areaServed: { '@type': 'AdministrativeArea', name: site.area },
   address: { '@type': 'PostalAddress', addressLocality: site.city, addressRegion: site.region, addressCountry: 'BR' },
   description:
-    'Serviços integrados em Jandira e região: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. O controle de pragas tem licenças ANVISA, IBAMA e CETESB e responsável técnico habilitado.',
+    'Serviços integrados na Grande São Paulo: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. O controle de pragas tem licenças ANVISA, IBAMA e CETESB e responsável técnico habilitado.',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Serviços integrados',
@@ -38,7 +38,7 @@ export const serviceSchema = (s, path) => ({
   description: s.metaDescription,
   url: abs(path),
   provider: { '@id': `${site.url}/#empresa` },
-  areaServed: { '@type': 'City', name: site.city },
+  areaServed: { '@type': 'AdministrativeArea', name: site.area },
 });
 
 export const faqSchema = (items) => ({

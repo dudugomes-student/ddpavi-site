@@ -7,14 +7,14 @@ import { icon } from '../templates/icons.mjs';
 export const sobre = () => ({
   path: '/sobre/',
   title: 'Sobre a DDPavi',
-  description: `Conheça a ${site.name}: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo em ${site.area}.`,
+  description: `Conheça a ${site.name}: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo na ${site.area}.`,
   schema: [localBusiness(), breadcrumbs([{ name: 'Início', path: '/' }, { name: 'Sobre', path: '/sobre/' }])],
   body: html`
 <section class="page-hero">
   <div class="container">
     <nav class="crumbs" aria-label="Você está em"><a href="/">Início</a> / Sobre</nav>
     <h1 data-motion="drop" data-delay="0.15">Sobre a DDPavi</h1>
-    <p class="lead" data-motion="rise" data-delay="0.5">A ${site.name} reúne quatro frentes: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. A base fica em ${site.city}, ${site.region}, e o atendimento cobre ${site.area}.</p>
+    <p class="lead" data-motion="rise" data-delay="0.5">A ${site.name} reúne quatro frentes: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. A base fica em ${site.city}, ${site.region}, e o atendimento cobre a ${site.area}.</p>
   </div>
 </section>
 <section class="section" aria-labelledby="certs-title">
@@ -44,7 +44,7 @@ export const sobre = () => ({
 export const contato = () => ({
   path: '/contato/',
   title: 'Contato e orçamento',
-  description: `Peça seu orçamento de serviços integrados em ${site.area}: WhatsApp ${site.whatsapp.display}, telefone ${site.phone.display} ou formulário.`,
+  description: `Peça seu orçamento de serviços integrados na ${site.area}: WhatsApp ${site.whatsapp.display}, telefone ${site.phone.display} ou formulário.`,
   schema: [localBusiness(), breadcrumbs([{ name: 'Início', path: '/' }, { name: 'Contato', path: '/contato/' }])],
   body: html`
 <section class="page-hero">
