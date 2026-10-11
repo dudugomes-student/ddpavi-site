@@ -141,10 +141,82 @@ export const services = [
   },
 ];
 
-export const otherServices = [
-  { title: 'Serviços gerais', text: 'Limpeza, manutenção preventiva e conservação.' },
-  { title: 'Portaria e controle de acesso', text: 'Equipe para condomínios e empresas.' },
-  { title: 'Jardinagem e paisagismo', text: 'Cuidado contínuo de áreas verdes.' },
+// As 4 frentes da DDPavi Serviços Integrados, com o mesmo peso. Licenças e responsável técnico valem só para controle de pragas.
+export const pest = {
+  slug: 'controle-de-pragas',
+  title: 'Controle de pragas',
+  text: 'Dedetização, desratização, descupinização, escorpiões e caixa d’água.',
+  metaTitle: 'Controle de pragas em Jandira e região',
+  metaDescription:
+    'Controle de pragas em Jandira e região: dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d’água, com licenças ANVISA, IBAMA e CETESB e responsável técnico habilitado.',
+  lead: 'Cada praga pede um método. Começamos entendendo o ambiente para indicar o serviço certo, com equipe uniformizada, EPI completo e responsável técnico habilitado.',
+};
+
+export const fronts = [
+  pest,
+  {
+    slug: 'servicos-gerais',
+    title: 'Serviços gerais',
+    text: 'Limpeza, manutenção preventiva e conservação.',
+    metaTitle: 'Serviços gerais em Jandira e região',
+    metaDescription:
+      'Serviços gerais em Jandira e região com a DDPavi Serviços Integrados: limpeza, manutenção preventiva e conservação. Peça seu orçamento pelo WhatsApp.',
+    // CONFIRMAR: lead, "quando contratar" e respostas abaixo são definição geral do serviço, não detalhes da operação da DDPavi.
+    lead: 'Limpeza, manutenção preventiva e conservação para manter o ambiente em ordem no dia a dia.',
+    signsEyebrow: 'Quando contratar',
+    signsTitle: 'Quando contratar serviços gerais',
+    signs: [
+      'A limpeza e a conservação das áreas precisam de uma rotina.',
+      'Pequenos reparos e a manutenção preventiva estão ficando acumulados.',
+      'O local precisa de apoio para manter áreas comuns e de uso diário em ordem.',
+    ],
+    faq: [
+      { q: 'O que entra em serviços gerais?', a: 'Limpeza, manutenção preventiva e conservação. O escopo de cada atendimento é combinado no orçamento.' },
+      { q: 'Como peço um orçamento?', a: 'Pelo WhatsApp, por telefone ou pelo formulário de contato. Conte o tipo de local e o que precisa ser feito.' },
+    ],
+  },
+  {
+    slug: 'portaria-e-controle-de-acesso',
+    title: 'Portaria e controle de acesso',
+    text: 'Equipe para condomínios e empresas.',
+    metaTitle: 'Portaria e controle de acesso em Jandira e região',
+    metaDescription:
+      'Portaria e controle de acesso em Jandira e região: equipe para condomínios e empresas. Peça seu orçamento pelo WhatsApp com a DDPavi Serviços Integrados.',
+    // CONFIRMAR: lead, "quando contratar" e respostas abaixo são definição geral do serviço, não detalhes da operação da DDPavi.
+    lead: 'Equipe de portaria e controle de acesso para condomínios e empresas: recepção de pessoas e controle de quem entra e sai do local.',
+    signsEyebrow: 'Quando contratar',
+    signsTitle: 'Quando contratar portaria e controle de acesso',
+    signs: [
+      'O condomínio precisa de equipe na portaria.',
+      'A empresa quer controlar a entrada de visitantes, prestadores de serviço e entregas.',
+      'A circulação de pessoas no local pede um ponto de controle.',
+    ],
+    faq: [
+      { q: 'Atendem condomínios e empresas?', a: 'Sim. A equipe de portaria e controle de acesso atende condomínios e empresas.' },
+      { q: 'Como peço um orçamento?', a: 'Pelo WhatsApp, por telefone ou pelo formulário de contato. Conte o tipo de local e os horários em que precisa de equipe.' },
+    ],
+  },
+  {
+    slug: 'jardinagem-e-paisagismo',
+    title: 'Jardinagem e paisagismo',
+    text: 'Cuidado contínuo de áreas verdes.',
+    metaTitle: 'Jardinagem e paisagismo em Jandira e região',
+    metaDescription:
+      'Jardinagem e paisagismo em Jandira e região: cuidado contínuo de áreas verdes. Peça seu orçamento pelo WhatsApp com a DDPavi Serviços Integrados.',
+    // CONFIRMAR: lead, "quando contratar" e respostas abaixo são definição geral do serviço, não detalhes da operação da DDPavi.
+    lead: 'Cuidado contínuo de áreas verdes, para jardins, gramados e canteiros seguirem bem cuidados.',
+    signsEyebrow: 'Quando contratar',
+    signsTitle: 'Quando contratar jardinagem e paisagismo',
+    signs: [
+      'Jardins, gramados e canteiros precisam de manutenção regular.',
+      'As áreas verdes do local pedem cuidado contínuo, não só pontual.',
+      'O paisagismo precisa ser renovado ou reorganizado.',
+    ],
+    faq: [
+      { q: 'O cuidado é contínuo ou pontual?', a: 'O serviço é voltado ao cuidado contínuo de áreas verdes. A frequência é combinada no orçamento.' },
+      { q: 'Como peço um orçamento?', a: 'Pelo WhatsApp, por telefone ou pelo formulário de contato. Conte o tipo de local e o tamanho aproximado da área verde.' },
+    ],
+  },
 ];
 
 export const segments = [
@@ -158,18 +230,19 @@ export const segments = [
 
 export const steps = [
   { title: 'Contato', text: 'Você chama no WhatsApp, liga ou preenche o formulário e conta o que está acontecendo.' },
-  { title: 'Avaliação', text: 'Entendemos o ambiente, a praga e o tipo de uso do local para indicar o serviço certo.' },
-  { title: 'Execução', text: 'Equipe uniformizada, com EPI completo e responsável técnico habilitado.' },
-  { title: 'Orientação', text: 'Você recebe orientações de preparo e de prevenção para manter o resultado.' },
+  { title: 'Avaliação', text: 'Entendemos o ambiente e o tipo de uso do local para indicar o serviço certo.' },
+  // CONFIRMAR: "equipe preparada para cada serviço" vale para as 4 frentes?
+  { title: 'Execução', text: 'Equipe preparada para cada serviço. No controle de pragas, com EPI completo e responsável técnico habilitado.' },
+  { title: 'Orientação', text: 'Você recebe as orientações para manter o resultado.' },
 ];
 
 export const pillars = [
-  { title: 'Licenciada', text: 'ANVISA / Vigilância Sanitária, IBAMA e CETESB.' },
+  { title: 'Licenciada', text: 'Controle de pragas com ANVISA / Vigilância Sanitária, IBAMA e CETESB.' },
   { title: 'Responsável técnico', text: 'Habilitado para os serviços de controle de pragas.' },
   { title: 'Equipe com EPI completo', text: 'Uniformizada e equipada em todos os atendimentos.' },
 ];
 
-export const homeFaq = [
+export const pestFaq = [
   {
     q: 'O serviço é seguro para crianças e animais de estimação?',
     a: 'Os procedimentos são feitos por equipe com EPI e sob responsabilidade de um técnico habilitado, seguindo as normas sanitárias. Antes da aplicação, o técnico informa como preparar o ambiente e por quanto tempo evitar a permanência no local, o que varia conforme o produto e o método. Se há crianças, idosos, gestantes ou animais, avise já no pedido de orçamento.',
@@ -179,15 +252,30 @@ export const homeFaq = [
     a: 'Depende da praga, do ambiente e dos hábitos do local. Por isso o atendimento inclui orientações de prevenção, e alguns casos pedem reaplicação ou acompanhamento.',
   },
   {
-    q: 'Quanto custa?',
-    a: 'O valor depende do tipo de praga, da área e do ambiente. Fale com a gente pelo WhatsApp ou pelo formulário para pedir seu orçamento.',
-  },
-  {
-    q: 'Quais ambientes vocês atendem?',
+    q: 'Quais ambientes vocês atendem no controle de pragas?',
     a: 'Condomínios, empresas e escritórios, restaurantes e food service, hospitais e serviços de saúde, indústrias, galpões logísticos e residências.',
   },
   {
     q: 'A DDPavi é licenciada?',
     a: 'Sim. Atuamos com licenças da ANVISA / Vigilância Sanitária, do IBAMA e da CETESB e com responsável técnico habilitado.',
+  },
+];
+
+export const homeFaq = [
+  {
+    q: 'Quais serviços a DDPavi oferece?',
+    a: 'Quatro frentes: controle de pragas, serviços gerais (limpeza, manutenção preventiva e conservação), portaria e controle de acesso e jardinagem e paisagismo.',
+  },
+  {
+    q: 'Como peço um orçamento?',
+    a: 'Pelo WhatsApp, por telefone ou pelo formulário de contato. Conte qual serviço você precisa e onde fica o local.',
+  },
+  {
+    q: 'Quanto custa?',
+    a: 'O valor depende do serviço, da área e do tipo de local. Fale com a gente pelo WhatsApp ou pelo formulário para pedir seu orçamento.',
+  },
+  {
+    q: 'Quais áreas vocês atendem?',
+    a: 'Jandira e região. Informe o endereço no pedido de orçamento para confirmarmos o atendimento no seu local.',
   },
 ];

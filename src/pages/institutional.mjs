@@ -1,30 +1,26 @@
 import { html } from '../lib/html.mjs';
 import { site } from '../config/site.mjs';
 import { waLink, telLink, localBusiness, breadcrumbs } from '../lib/seo.mjs';
-import { pillars, steps } from '../data/content.mjs';
+import { pillars, steps, services, fronts, pest } from '../data/content.mjs';
 import { icon } from '../templates/icons.mjs';
 
 export const sobre = () => ({
   path: '/sobre/',
   title: 'Sobre a DDPavi',
-  description: `Conheça a ${site.name}: controle de pragas e serviços integrados em ${site.area}, com equipe licenciada e responsável técnico habilitado.`,
+  description: `Conheça a ${site.name}: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo em ${site.area}.`,
   schema: [localBusiness(), breadcrumbs([{ name: 'Início', path: '/' }, { name: 'Sobre', path: '/sobre/' }])],
   body: html`
 <section class="page-hero">
   <div class="container">
     <nav class="crumbs" aria-label="Você está em"><a href="/">Início</a> / Sobre</nav>
     <h1 data-motion="drop" data-delay="0.15">Sobre a DDPavi</h1>
-    <p class="lead" data-motion="rise" data-delay="0.5">A ${site.name} atua com controle de pragas e serviços integrados para condomínios, empresas e residências, com base em ${site.city}, ${site.region}.</p>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="trust" data-stagger="0.1">${pillars.map((p) => html`<div class="trust__item" data-motion="rise"><h3>${p.title}</h3><p>${p.text}</p></div>`)}</div>
+    <p class="lead" data-motion="rise" data-delay="0.5">A ${site.name} reúne quatro frentes: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. A base fica em ${site.city}, ${site.region}, e o atendimento cobre ${site.area}.</p>
   </div>
 </section>
 <section class="section" aria-labelledby="certs-title">
   <div class="container">
-    <div class="section__head"><p class="eyebrow">Documentação</p><h2 id="certs-title" data-motion="rise">Certificações e licenças</h2></div>
+    <div class="section__head"><p class="eyebrow">Controle de pragas</p><h2 id="certs-title" data-motion="rise">Certificações e licenças</h2><p class="lead">Licenças e responsável técnico do serviço de controle de pragas.</p></div>
+    <div class="trust" data-stagger="0.1">${pillars.map((p) => html`<div class="trust__item" data-motion="rise"><h3>${p.title}</h3><p>${p.text}</p></div>`)}</div>
     <ul class="certs" data-stagger="0.1">${site.certifications.map((c) => html`<li class="cert" data-motion="rise">
       <span class="cert__mark" aria-hidden="true"></span>
       <h3>${c.name}</h3>
@@ -48,14 +44,14 @@ export const sobre = () => ({
 export const contato = () => ({
   path: '/contato/',
   title: 'Contato e orçamento',
-  description: `Peça seu orçamento de dedetização em ${site.area}: WhatsApp ${site.whatsapp.display}, telefone ${site.phone.display} ou formulário.`,
+  description: `Peça seu orçamento de serviços integrados em ${site.area}: WhatsApp ${site.whatsapp.display}, telefone ${site.phone.display} ou formulário.`,
   schema: [localBusiness(), breadcrumbs([{ name: 'Início', path: '/' }, { name: 'Contato', path: '/contato/' }])],
   body: html`
 <section class="page-hero">
   <div class="container">
     <nav class="crumbs" aria-label="Você está em"><a href="/">Início</a> / Contato</nav>
     <h1 data-motion="drop" data-delay="0.15">Peça seu orçamento</h1>
-    <p class="lead" data-motion="rise" data-delay="0.5">Conte qual é a praga e onde ela aparece. Respondemos pelo WhatsApp.</p>
+    <p class="lead" data-motion="rise" data-delay="0.5">Conte qual serviço você precisa e onde fica o local. Respondemos pelo WhatsApp.</p>
   </div>
 </section>
 <section class="section">
@@ -64,9 +60,10 @@ export const contato = () => ({
       <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required></div>
       <div class="field"><label for="f-servico">Serviço</label>
         <select id="f-servico" name="servico" required>
-          <option value="Dedetização">Dedetização</option><option value="Desratização">Desratização</option>
-          <option value="Descupinização">Descupinização</option><option value="Controle de escorpiões">Controle de escorpiões</option>
-          <option value="Limpeza de caixa d'água">Limpeza de caixa d'água</option><option value="Outro">Outro</option>
+          ${fronts.map((f) => f === pest
+            ? html`<optgroup label="${pest.title}">${services.map((s) => html`<option value="${s.title}">${s.title}</option>`)}</optgroup>`
+            : html`<option value="${f.title}">${f.title}</option>`)}
+          <option value="Outro">Outro</option>
         </select></div>
       <div class="field"><label for="f-local">Local (bairro e tipo de imóvel)</label><input id="f-local" name="local" type="text" autocomplete="address-level2"></div>
       <div class="field"><label for="f-msg">Mensagem</label><textarea id="f-msg" name="mensagem"></textarea></div>

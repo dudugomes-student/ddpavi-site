@@ -1,8 +1,9 @@
 /* ===== Cena 1: hero "Busca" ===== */
 .hero { min-height: 100svh; display: flex; align-items: center; padding-block: calc(var(--header-h) + 2rem) 3rem; }
 .hero__inner { position: relative; z-index: 2; display: grid; gap: clamp(1.2rem, 3vw, 2rem); }
-.hero h1 { font-size: clamp(3.4rem, 19vw, 7rem); line-height: .84; }
-@media (min-width: 901px) { .hero h1 { font-size: clamp(5rem, 10.5vw, 11rem); } }
+.hero h1 { font-size: clamp(3rem, 15.5vw, 7rem); line-height: .84; }
+@media (min-width: 901px) { .hero h1 { font-size: clamp(5rem, 10.5vw, 9.5rem); } }
+.hero h1 .line + .line { margin-block-start: .1em; }   /* folga para a cedilha de "SERVIÇOS" */
 .hero h1 .dot { color: var(--red-500); }
 .hero__foot { display: grid; gap: 1.6rem; max-width: 38rem; margin-block-start: clamp(.8rem, 3vw, 2.4rem); }
 .hero__sub { margin: 0; }

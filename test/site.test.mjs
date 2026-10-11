@@ -49,3 +49,34 @@ test('sitemap lista só páginas indexáveis', async () => {
   const s = await read(join(dist, 'sitemap.xml'));
   assert.ok(!s.includes('404')); assert.ok(s.includes('/dedetizacao/'));
 });
+
+const frontSlugs = ['controle-de-pragas', 'servicos-gerais', 'portaria-e-controle-de-acesso', 'jardinagem-e-paisagismo'];
+const pestSlugs = ['dedetizacao', 'desratizacao', 'descupinizacao', 'escorpioes', 'limpeza-de-caixa-dagua'];
+const page = (slug) => read(join(dist, slug, 'index.html'));
+const main = (s) => s.slice(s.indexOf('<main'), s.indexOf('</main>'));
+
+test('as 4 frentes têm página, estão no menu, no rodapé, na home e no JSON-LD', async () => {
+  const home = await read(join(dist, 'index.html'));
+  assert.match(home, /<nav class="nav"[^]*?href="\/#servicos">Serviços integrados<[^]*?href="\/controle-de-pragas\/">Controle de pragas</);
+  const footer = home.slice(home.indexOf('<footer'));
+  const ld = home.match(/"hasOfferCatalog":\{.*?\]\}/)[0];
+  for (const slug of frontSlugs) {
+    await page(slug);
+    assert.ok(footer.includes(`href="/${slug}/"`), `rodapé sem ${slug}`);
+    assert.ok(main(home).includes(`class="service-row" href="/${slug}/"`), `home sem ${slug}`);
+    assert.ok(ld.includes(`/${slug}/`), `JSON-LD sem ${slug}`);
+  }
+});
+test('licenças e responsável técnico só aparecem no contexto de controle de pragas', async () => {
+  for (const slug of frontSlugs.slice(1)) assert.doesNotMatch(main(await page(slug)), /ANVISA|IBAMA|CETESB|respons[aá]vel t[eé]cnico/i, slug);
+  assert.match(main(await page('controle-de-pragas')), /ANVISA/);
+});
+test('guia de pragas lista os 5 serviços e as URLs antigas continuam no sitemap', async () => {
+  const guide = main(await page('controle-de-pragas'));
+  const sitemap = await read(join(dist, 'sitemap.xml'));
+  for (const slug of pestSlugs) {
+    assert.ok(guide.includes(`href="/${slug}/"`), `guia sem ${slug}`);
+    assert.ok(sitemap.includes(`/${slug}/`), `sitemap sem ${slug}`);
+  }
+  for (const slug of frontSlugs) assert.ok(sitemap.includes(`/${slug}/`), `sitemap sem ${slug}`);
+});

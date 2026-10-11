@@ -4,10 +4,10 @@ import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site } from './src/config/site.mjs';
-import { services } from './src/data/content.mjs';
+import { services, fronts, pest } from './src/data/content.mjs';
 import { layout } from './src/templates/layout.mjs';
 import { home } from './src/pages/home.mjs';
-import { servicePage } from './src/pages/services.mjs';
+import { servicePage, frontPage, pestGuide } from './src/pages/services.mjs';
 import { sobre, contato, notFound } from './src/pages/institutional.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -27,7 +27,7 @@ export async function build() {
   await cp(join(root, 'src/main.js'), join(dist, 'assets/js/main.js'));
   await cp(join(root, 'public'), dist, { recursive: true });
 
-  const pages = [home(), ...services.map(servicePage), sobre(), contato(), notFound()];
+  const pages = [home(), pestGuide(), ...fronts.filter((f) => f !== pest).map(frontPage), ...services.map(servicePage), sobre(), contato(), notFound()];
   for (const p of pages) {
     const out = p.path === '/' ? 'index.html' : p.path.endsWith('.html') ? p.path.slice(1) : `${p.path.slice(1)}index.html`;
     await mkdir(dirname(join(dist, out)), { recursive: true });

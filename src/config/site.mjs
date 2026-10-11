@@ -8,9 +8,10 @@ export const site = {
   city: 'Jandira',
   region: 'SP',
   area: 'Jandira e região',
-  tagline: 'Pragas no alvo.',
+  tagline: 'Serviços no alvo.',
   whatsapp: { number: '5511916194867', display: '(11) 91619-4867' },
   phone: { tel: '+551147891000', display: '(11) 4789-1000' },
+  // Licenças e responsável técnico valem só para o controle de pragas.
   // CONFIRMAR: as licenças abaixo constam no site atual; conferir números/validade antes de destacar documentos.
   licenses: ['ANVISA / Vigilância Sanitária', 'IBAMA', 'CETESB'],
   // CONFIRMAR: preencher issuer, number e validUntil com os dados dos documentos reais (validUntil no formato AAAA-MM-DD).
@@ -25,8 +26,8 @@ export const site = {
 };
 
 export const nav = [
-  { href: '/dedetizacao/', label: 'Dedetização' },
-  { href: '/#servicos', label: 'Serviços' },
+  { href: '/#servicos', label: 'Serviços integrados' },
+  { href: '/controle-de-pragas/', label: 'Controle de pragas' },
   { href: '/#segmentos', label: 'Quem atendemos' },
   { href: '/sobre/', label: 'Sobre' },
   { href: '/contato/', label: 'Contato' },

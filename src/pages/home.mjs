@@ -1,8 +1,9 @@
 import { html } from '../lib/html.mjs';
 import { site } from '../config/site.mjs';
 import { waLink, telLink, localBusiness, faqSchema } from '../lib/seo.mjs';
-import { services, otherServices, segments, steps, pillars, homeFaq } from '../data/content.mjs';
+import { services, fronts, pest, segments, steps, pillars, homeFaq } from '../data/content.mjs';
 import { icon } from '../templates/icons.mjs';
+import { serviceRow } from './services.mjs';
 
 const WA = waLink('Olá! Vim pelo site da DDPavi e gostaria de um orçamento.');
 const empresa = segments.filter((s) => s.name !== 'Residências');
@@ -11,9 +12,9 @@ const casaServicos = ['dedetizacao', 'desratizacao', 'escorpioes', 'descupinizac
 
 export const home = () => ({
   path: '/',
-  title: 'Dedetização em Jandira e região — Pragas no alvo',
+  title: 'Serviços integrados em Jandira e região — Serviços no alvo',
   description:
-    'Dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d’água em Jandira e região. Equipe licenciada, EPI completo e responsável técnico habilitado.',
+    'Serviços integrados em Jandira e região: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. Peça seu orçamento pelo WhatsApp.',
   schema: [localBusiness(), faqSchema(homeFaq)],
   body: html`
 <section class="hero">
@@ -26,19 +27,42 @@ export const home = () => ({
     <span class="reticle__tag">Alvo travado</span>
   </div>
   <div class="container hero__inner">
-    <p class="eyebrow" data-motion="fade" data-delay="0.1"><b>Dedetização</b> em ${site.area}</p>
+    <p class="eyebrow" data-motion="fade" data-delay="0.1"><span><b>Serviços integrados</b> em ${site.area}</span></p>
     <h1>
-      <span class="line" data-motion="drop" data-delay="0.3">Pragas</span>
+      <span class="line" data-motion="drop" data-delay="0.3">Serviços</span>
       <span class="line line--red" data-motion="drop" data-delay="0.62">no alvo<span class="dot">.</span></span>
     </h1>
     <div class="hero__foot">
-      <p class="hero__sub" data-motion="rise" data-delay="1.0">Controle de pragas para <strong>condomínios, empresas e residências</strong>, com equipe uniformizada, EPI completo e responsável técnico habilitado.</p>
+      <p class="hero__sub" data-motion="rise" data-delay="1.0"><strong>Controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo</strong>: quatro frentes da mesma empresa, em ${site.area}.</p>
       <div class="btn-row" data-motion="rise" data-delay="1.15">
         <a class="btn btn--red" href="${WA}" target="_blank" rel="noopener">${icon('chat')} Pedir orçamento no WhatsApp</a>
         <a class="btn btn--ghost" href="${telLink()}">${icon('phone')} ${site.phone.display}</a>
       </div>
     </div>
-    <a class="scroll-cue" href="#revelacao" data-motion="fade" data-delay="2.4"><span>Role para investigar</span><i aria-hidden="true"></i></a>
+    <a class="scroll-cue" href="#servicos" data-motion="fade" data-delay="2.4"><span>Role para conhecer</span><i aria-hidden="true"></i></a>
+  </div>
+</section>
+
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Serviços integrados</p>
+      <h2 data-motion="rise">Quatro frentes, um alvo</h2>
+      <p class="lead">Controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. Escolha a frente e peça seu orçamento.</p>
+    </div>
+    <div class="service-list">
+      ${fronts.map((f) => serviceRow(f, `/${f.slug}/`, f.text))}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pragas" aria-labelledby="pragas-title">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">${pest.title}</p>
+      <h2 id="pragas-title" data-motion="rise">Cada praga, um alvo</h2>
+      <p class="lead">Dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d’água, com licenças e responsável técnico habilitado.</p>
+    </div>
   </div>
 </section>
 
@@ -61,44 +85,11 @@ export const home = () => ({
   <p class="sr-only">Cena interativa: uma lanterna de luz ultravioleta revela sinais de pragas escondidos em um ambiente escuro, como baratas, fezes, rastros de roedor, manchas e trilhas de formigas. O botão "Revelar tudo" mostra todos.</p>
 </section>
 
-<section aria-label="Diferenciais" class="container">
+<section aria-label="Licenças do controle de pragas" class="container">
   <div class="trust" data-stagger="0.1">
     ${pillars.map((p) => html`<div class="trust__item" data-motion="rise"><h3>${p.title}</h3><p>${p.text}</p></div>`)}
   </div>
-</section>
-
-<section class="section" id="servicos">
-  <div class="container">
-    <div class="section__head">
-      <p class="eyebrow">Serviços</p>
-      <h2 data-motion="rise">Cada praga, um alvo</h2>
-      <p class="lead">Cada praga pede um método. Começamos entendendo o ambiente para indicar o serviço certo.</p>
-    </div>
-    <div class="service-list">
-      ${services.map((s) => html`<a class="service-row" href="/${s.slug}/" data-motion="rise">
-        <h3 class="service-row__title">${s.title}</h3>
-        <span class="service-row__tag">${s.tagline}</span>
-        <span class="service-row__go" aria-hidden="true">
-          <span class="lock lock--1" data-motion="lock"></span><span class="lock lock--2" data-motion="lock" data-delay="0.08"></span>
-          ${icon('arrow')}
-        </span>
-      </a>`)}
-    </div>
-    <div class="subhead">
-      <p class="eyebrow">Serviços integrados</p>
-      <p class="lead">Além do controle de pragas, a DDPavi oferece outros serviços integrados.</p>
-    </div>
-    <div class="service-list">
-      ${otherServices.map((o) => html`<a class="service-row" href="${waLink(`Olá! Vim pelo site da DDPavi e gostaria de um orçamento de ${o.title.toLowerCase()}.`)}" target="_blank" rel="noopener" data-motion="rise">
-        <h3 class="service-row__title">${o.title}</h3>
-        <span class="service-row__tag">${o.text}</span>
-        <span class="service-row__go" aria-hidden="true">
-          <span class="lock lock--1" data-motion="lock"></span><span class="lock lock--2" data-motion="lock" data-delay="0.08"></span>
-          ${icon('arrow')}
-        </span>
-      </a>`)}
-    </div>
-  </div>
+  <div class="btn-row" style="margin-block-start:2rem"><a class="btn btn--ghost" href="/${pest.slug}/">Todos os serviços de pragas ${icon('arrow')}</a></div>
 </section>
 
 <section class="section worlds" id="segmentos">
@@ -114,7 +105,7 @@ export const home = () => ({
     </div>
 
     <div class="world" id="mundo-empresa" role="tabpanel" aria-labelledby="tab-empresa">
-      <p class="lead" data-pop>Pragas afetam a imagem, a saúde de quem trabalha e a conformidade com a vigilância sanitária. O serviço é combinado conforme o expediente.</p>
+      <p class="lead" data-pop>Controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo para o dia a dia de condomínios e empresas. O serviço é combinado conforme o expediente.</p>
       <div class="segments">
         ${empresa.map((s) => html`<div class="segment" data-pop><h3>${s.name}</h3><p>${s.text}</p></div>`)}
       </div>
@@ -159,7 +150,7 @@ export const home = () => ({
 <section class="cta-final">
   <div class="cta-final__rings" aria-hidden="true"><span class="ring ring--3"></span><span class="ring ring--2"></span><span class="ring ring--1"></span></div>
   <div class="container">
-    <h2 data-motion="rise">Praga não espera. Mire e chame.</h2>
+    <h2 data-motion="rise">Escolha o serviço. Mire e chame.</h2>
     <p>Conte o que está acontecendo e receba o orçamento pelo WhatsApp.</p>
     <div class="btn-row">
       <span class="lockbtn">

@@ -1,7 +1,7 @@
 import { html, raw } from '../lib/html.mjs';
 import { site, nav } from '../config/site.mjs';
 import { abs, waLink, telLink, jsonLd } from '../lib/seo.mjs';
-import { services } from '../data/content.mjs';
+import { fronts } from '../data/content.mjs';
 import { icon } from './icons.mjs';
 
 const earlyScript = `document.documentElement.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduce-motion')}catch(e){}setTimeout(function(){if(!document.documentElement.classList.contains('motion-ready'))document.documentElement.classList.add('motion-timeout')},3500);`;
@@ -74,11 +74,11 @@ function footer() {
     <div class="footer__grid">
       <div>
         <img src="/img/logo-dark.png" width="283" height="84" alt="${site.name}" loading="lazy">
-        <p>Controle de pragas e serviços integrados para condomínios, empresas e residências. Sede em ${site.city}, ${site.region}.</p>
+        <p>Serviços integrados: controle de pragas, serviços gerais, portaria e controle de acesso e jardinagem e paisagismo. Sede em ${site.city}, ${site.region}.</p>
       </div>
       <div>
-        <h4>Serviços</h4>
-        <ul>${services.map((s) => html`<li><a href="/${s.slug}/">${s.title}</a></li>`)}</ul>
+        <h4>Serviços integrados</h4>
+        <ul>${fronts.map((f) => html`<li><a href="/${f.slug}/">${f.title}</a></li>`)}</ul>
       </div>
       <div>
         <h4>Empresa</h4>
@@ -100,7 +100,7 @@ function footer() {
     </div>
     <div class="footer__legal">
       <span>© ${site.year} ${site.name}. Todos os direitos reservados.</span>
-      <span>Licenciada: ${site.licenses.join(' · ')}</span>
+      <span>Controle de pragas licenciado: ${site.licenses.join(' · ')}</span>
     </div>
   </div>
 </footer>`;
