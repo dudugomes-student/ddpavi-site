@@ -1,0 +1,33 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 1rem); background: var(--canvas); }
+body { margin: 0; min-height: 100vh; background: var(--canvas); color: var(--text); font-family: var(--font-text); font-size: 1.0625rem; line-height: 1.65; font-feature-settings: 'kern', 'liga', 'calt'; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
+img, video, svg { display: block; max-width: 100%; }
+img, video { height: auto; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--blue-300); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--blue-600); color: #fff; }
+
+.skip-link { position: absolute; z-index: 100; inset-inline-start: 1rem; inset-block-start: -4rem; padding: .7rem 1rem; background: #fff; color: var(--ink-950); font-weight: 600; border-radius: var(--radius-s); transition: inset-block-start var(--dur-feedback) var(--ease-out); }
+.skip-link:focus { inset-block-start: 1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.container { width: min(var(--page-max), calc(100% - 2 * var(--page-inline))); margin-inline: auto; }
+
+/* Tipografia editorial */
+.display { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; letter-spacing: -0.045em; line-height: 0.88; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 900; text-wrap: balance; }
+h2 { font-size: clamp(2.3rem, 5.4vw, 4.6rem); letter-spacing: -0.042em; line-height: 0.96; text-transform: uppercase; }
+h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); letter-spacing: -0.025em; line-height: 1.1; font-weight: 700; }
+.lead { max-width: 40rem; color: var(--text-2); font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.6; }
+.eyebrow { display: flex; align-items: center; gap: .9rem; margin-block-end: 1.4rem; color: var(--text-3); font-size: .75rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.eyebrow b { color: var(--red-400); font-weight: 600; }
+.eyebrow::after { content: ''; flex: 0 0 3rem; height: 1px; background: var(--line-strong); }
+
+.section { padding-block: var(--section-gap); border-block-start: 1px solid var(--line); }
+.section__head { display: grid; gap: 1.2rem; margin-block-end: clamp(2.5rem, 5vw, 4.5rem); max-width: 56rem; }
+.prose p { color: var(--text-2); max-width: 44rem; }
+.prose p + p { margin-block-start: 1rem; }

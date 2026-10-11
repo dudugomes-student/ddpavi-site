@@ -1,0 +1,59 @@
+/* Design tokens — a única fonte de cor, tipo, espaço e movimento do site. */
+@font-face { font-family: 'Inter Display'; font-weight: 900; font-style: normal; font-display: swap; src: url('/fonts/InterDisplay-Black.woff') format('woff'); }
+@font-face { font-family: 'Inter Display'; font-weight: 700; font-style: normal; font-display: swap; src: url('/fonts/InterDisplay-Bold.woff') format('woff'); }
+@font-face { font-family: 'Inter'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/Inter-Regular.woff') format('woff'); }
+@font-face { font-family: 'Inter'; font-weight: 500; font-style: normal; font-display: swap; src: url('/fonts/Inter-Medium.woff') format('woff'); }
+@font-face { font-family: 'Inter'; font-weight: 600; font-style: normal; font-display: swap; src: url('/fonts/Inter-SemiBold.woff') format('woff'); }
+
+:root {
+  color-scheme: dark;
+
+  --font-display: 'Inter Display', 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-text: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+
+  /* Marca: azul predominante e escuro; vermelho só em ação e destaque */
+  --ink-1000: #050b14;
+  --ink-950: #07101b;
+  --ink-900: #0b1626;
+  --ink-850: #0f1e36;
+  --ink-800: #152744;
+  --blue-700: #0020a0;
+  --blue-600: #0028c8;
+  --blue-500: #143cbe;
+  --blue-400: #3a63f0;
+  --blue-300: #7c9cff;
+  --blue-200: #aac0f0;
+  --red-600: #d60e0e;
+  --red-500: #ec2020;
+  --red-400: #ff5252;
+
+  --text: #f2f5fc;
+  --text-2: #b4c4ea;
+  --text-3: #8a9bc4;
+  --line: rgb(170 192 240 / 0.16);
+  --line-strong: rgb(170 192 240 / 0.34);
+
+  --canvas: var(--ink-950);
+  --surface: var(--ink-900);
+  --surface-raised: var(--ink-850);
+
+  --radius-s: 0.6rem;
+  --radius-m: 1.1rem;
+  --radius-l: 1.75rem;
+
+  --page-inline: clamp(1.25rem, 4.2vw, 4.5rem);
+  --page-max: 82rem;
+  --section-gap: clamp(4.5rem, 9vw, 8.5rem);
+
+  /* Movimento — calmo quando parado, vivo quando tocado */
+  --dur-press: 120ms;
+  --dur-feedback: 180ms;
+  --dur-reveal: 420ms;
+  --dur-settle: 640ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-enter: cubic-bezier(0.14, 1, 0.34, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 0.7, 0.2);
+
+  --shadow-object: 0 30px 70px rgb(0 0 0 / 0.45);
+  --header-h: 4.5rem;
+}

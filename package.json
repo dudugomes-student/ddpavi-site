@@ -1,0 +1,1 @@
+{ "name": "ddpavi-site", "private": true, "type": "module", "scripts": { "build": "node build.mjs", "test": "node --test test/site.test.mjs", "serve": "python3 -m http.server 8000 -d dist" } }

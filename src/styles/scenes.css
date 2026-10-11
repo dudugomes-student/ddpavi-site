@@ -1,0 +1,94 @@
+/* ===== Cena 1: hero "Busca" ===== */
+.hero { min-height: 100svh; display: flex; align-items: center; padding-block: calc(var(--header-h) + 2rem) 3rem; }
+.hero__inner { position: relative; z-index: 2; display: grid; gap: clamp(1.2rem, 3vw, 2rem); }
+.hero h1 { font-size: clamp(3.4rem, 19vw, 7rem); line-height: .84; }
+@media (min-width: 901px) { .hero h1 { font-size: clamp(6rem, 15.5vw, 15rem); } }
+.hero h1 .dot { color: var(--red-500); }
+.hero__foot { display: grid; gap: 1.6rem; max-width: 38rem; margin-block-start: clamp(.8rem, 3vw, 2.4rem); }
+.hero__sub { margin: 0; }
+.reticle { position: absolute; z-index: 1; left: 80%; top: 40%; width: 0; height: 0; pointer-events: none; will-change: transform; }
+html.js:not(.reduce-motion) .reticle:not([data-in]), html.js:not(.reduce-motion) .reticle__ring:not([data-in]), html.js:not(.reduce-motion) .reticle__tag:not([data-in]) { opacity: 0; }
+html.motion-timeout .reticle, html.motion-timeout .reticle__ring, html.motion-timeout .reticle__tag { opacity: 1 !important; transform: none; }
+.reticle__line { position: absolute; background: rgb(60 100 230 / .42); }
+.reticle__line--h { left: -150vw; width: 300vw; top: 0; height: 1px; }
+.reticle__line--v { top: -150vh; height: 300vh; left: 0; width: 1px; }
+.reticle__ring { position: absolute; left: 0; top: 0; translate: -50% -50%; border-radius: 50%; border: 1px solid rgb(60 100 230 / .6); }
+.reticle__ring--1 { width: 3.2rem; aspect-ratio: 1; border: 2px solid var(--red-500); }
+.reticle__ring--2 { width: clamp(9rem, 16vw, 15rem); aspect-ratio: 1; border-width: 3px; border-color: var(--blue-600); }
+.reticle__ring--3 { width: clamp(20rem, 38vw, 36rem); aspect-ratio: 1; border-color: rgb(40 80 210 / .4); }
+.reticle__tag { position: absolute; left: 2.2rem; top: 2.2rem; padding: .35rem .7rem; border-radius: .3rem; background: var(--red-600); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+.scroll-cue { display: inline-flex; align-items: center; gap: .8rem; justify-self: start; color: var(--text-3); font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.scroll-cue i { width: 1px; height: 2.4rem; background: linear-gradient(var(--red-500), transparent); transform-origin: top; }
+html:not(.reduce-motion) .scroll-cue i { animation: cue 1.8s var(--ease-out) infinite; }
+@keyframes cue { 0% { scale: 1 0; } 50% { scale: 1 1; } 100% { scale: 1 1; opacity: 0; } }
+@media (max-width: 760px) { .hero { align-items: flex-start; } .scroll-cue { display: none; } .reticle__ring--3 { width: 22rem; } }
+
+/* ===== Cena 2: revelação UV ===== */
+.uv { position: relative; height: 280svh; border-block-start: 1px solid var(--line); background: #060d17; }
+.uv__sticky { position: sticky; top: 0; height: 100svh; overflow: clip; }
+.uv__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.uv__ui { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: flex-start; padding-block: calc(var(--header-h) + 1.5rem) 2rem; pointer-events: none; }
+.uv__ui h2 { font-size: clamp(2.4rem, 7.2vw, 7rem); max-width: 14ch; text-shadow: 0 2px 30px #060d17, 0 0 6px #060d17; }
+.uv__hint { margin-block-start: 1rem; color: var(--text-2); font-size: 1rem; text-shadow: 0 0 12px #060d17; }
+.uv__hint-touch { display: none; }
+@media (hover: none), (pointer: coarse) { .uv__hint-fine { display: none; } .uv__hint-touch { display: inline; } }
+.uv__count { margin-block-start: auto; color: var(--text-2); font-size: .9rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.uv__count b { color: var(--red-400); font-size: 1.6em; }
+.uv__skip { align-self: flex-start; margin-block-start: .8rem; padding: .6rem 1.1rem; border: 1px solid var(--line-strong); border-radius: 99rem; background: rgb(6 13 23 / .6); color: var(--text-2); font-size: .85rem; font-weight: 600; pointer-events: auto; }
+.uv__skip:hover { color: var(--text); border-color: var(--text); }
+.uv__done { position: absolute; z-index: 3; inset-inline: 0; inset-block-end: 0; padding-block: 2rem 2.4rem; background: linear-gradient(transparent, #060d17 40%); }
+.uv__done h3 { font-size: clamp(1.8rem, 4vw, 3rem); text-transform: uppercase; letter-spacing: -.03em; }
+.uv__done p { max-width: 38rem; margin-block: .8rem 1.4rem; color: var(--text-2); }
+.uv[data-done] .uv__count, .uv[data-done] .uv__skip { opacity: 0; }
+html.reduce-motion .uv, html:not(.js) .uv { height: auto; }
+html.reduce-motion .uv__sticky, html:not(.js) .uv__sticky { position: relative; height: auto; min-height: 90svh; }
+html.reduce-motion .uv__done[hidden], html:not(.js) .uv__done[hidden] { display: block; }
+html.reduce-motion .uv__skip { display: none; }
+
+/* ===== Cena 3: alvos travados ===== */
+.service-row__go { position: relative; overflow: visible; }
+.lock { position: absolute; left: 50%; top: 50%; translate: -50% -50%; border-radius: 50%; border: 2px solid var(--red-500); pointer-events: none; }
+.lock--1 { width: 170%; aspect-ratio: 1; }
+.lock--2 { width: 250%; aspect-ratio: 1; border-width: 1px; border-color: rgb(60 100 230 / .6); }
+html.js:not(.reduce-motion) .lock:not([data-in]) { opacity: 0; }
+html.motion-timeout .lock { opacity: 1 !important; transform: none !important; }
+@media (max-width: 760px) { .lock--2 { display: none; } }
+
+/* ===== Cena 4: dois mundos ===== */
+.switch { position: relative; display: inline-flex; padding: .35rem; margin-block-end: clamp(2rem, 4vw, 3rem); border: 1px solid var(--line-strong); border-radius: 99rem; background: var(--ink-900); }
+.switch__thumb { position: absolute; z-index: 0; top: .35rem; bottom: .35rem; left: 0; width: 0; border-radius: 99rem; background: var(--red-600); box-shadow: 0 8px 24px rgb(214 14 14 / .35); }
+.switch__tab { position: relative; z-index: 1; min-height: 3rem; padding: 0 1.5rem; border: 0; border-radius: 99rem; background: transparent; color: var(--text-2); font-weight: 600; font-size: 1rem; transition: color var(--dur-feedback); }
+.switch__tab[aria-selected='true'] { color: #fff; }
+html:not(.js) .switch { display: none; }
+.world { display: grid; gap: 2rem; }
+.world[hidden] { display: none; }
+html:not(.js) .world[hidden] { display: grid; }
+html:not(.js) .world + .world { margin-block-start: 3rem; }
+.chips-list { display: flex; flex-wrap: wrap; gap: .7rem; }
+.world .note { margin: 0; max-width: 40rem; }
+html.js:not(.reduce-motion) .world [data-pop] { will-change: transform; }
+
+/* ===== Cena 6: fecho ===== */
+.lockbtn { position: relative; display: inline-flex; }
+.lockbtn .lock--1 { width: 125%; aspect-ratio: auto; height: 190%; border-radius: 99rem; border-color: #fff; }
+.lockbtn .lock--2 { width: 150%; aspect-ratio: auto; height: 280%; border-radius: 99rem; border-color: rgb(255 255 255 / .35); }
+@media (max-width: 760px) { .lockbtn { width: 100%; } .lockbtn .btn { width: 100%; } .lockbtn .lock { display: none; } }
+
+/* ===== Cursor-mira ===== */
+.cursor { position: fixed; z-index: 90; left: -1.2rem; top: -1.2rem; width: 2.4rem; height: 2.4rem; pointer-events: none; opacity: 0; transition: opacity var(--dur-feedback); }
+.cursor[data-on] { opacity: 1; }
+.cursor i { position: absolute; inset: 0; border: 1.5px solid rgb(255 255 255 / .75); border-radius: 50%; transition: transform var(--dur-settle) var(--ease-out), background var(--dur-feedback), border-color var(--dur-feedback); }
+.cursor[data-hot] i { transform: scale(1.7); border-color: var(--red-500); background: rgb(236 32 32 / .12); }
+.cursor[data-hide] { opacity: 0; }
+
+/* ===== Cabeçalho: logo sem placa (versão para fundo escuro) ===== */
+.brand img { height: 2rem; }
+@media (max-width: 760px) { .reticle__tag { display: none; } }
+@media (max-width: 760px) { .uv__done { padding-block-end: 6rem; } .uv__count { margin-block-end: 5rem; } .uv__skip { margin-block-end: 0; } }
+.lockbtn .lock--1 { height: 170%; } .lockbtn .lock--2 { height: 235%; }
+.cta-final .btn-row { margin-block: 1.2rem; }
+html.reduce-motion .uv__done, html:not(.js) .uv__done { position: relative; margin-block-start: 4rem; background: none; }
+html.reduce-motion .uv__sticky, html:not(.js) .uv__sticky { min-height: 0; display: flex; flex-direction: column; }
+html.reduce-motion .uv__canvas, html:not(.js) .uv__canvas { position: relative; height: 46svh; order: 1; }
+html.reduce-motion .uv__done { order: 2; }
+html:not(.js) .uv__hint, html:not(.js) .uv__count, html:not(.js) .uv__skip { display: none; }
