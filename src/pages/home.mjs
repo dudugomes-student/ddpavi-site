@@ -61,7 +61,7 @@ export const home = () => ({
     <div class="section__head">
       <p class="eyebrow">${pest.title}</p>
       <h2 id="pragas-title" data-motion="rise">Cada praga, um alvo</h2>
-      <p class="lead">Dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d’água, com licenças e responsável técnico habilitado.</p>
+      <p class="lead">Dedetização, desratização, descupinização, escorpiões e limpeza de caixa d’água, com licenças e responsável técnico habilitado.</p>
     </div>
   </div>
 </section>

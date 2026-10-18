@@ -86,13 +86,14 @@ export const services = [
   },
   {
     slug: 'escorpioes',
-    title: 'Controle de escorpiões',
+    title: 'Escorpiões',
+    quoteLabel: 'controle de pragas para escorpiões',
     tagline: 'Prevenção e aplicação técnica',
-    metaTitle: 'Controle de escorpiões na Grande São Paulo',
+    metaTitle: 'Escorpiões: controle de pragas na Grande São Paulo',
     metaDescription:
-      'Controle de escorpiões na Grande São Paulo: aplicação técnica e orientações para tornar o ambiente menos atrativo. Atendimento a condomínios, empresas e residências.',
+      'Controle de pragas com foco em escorpiões na Grande São Paulo: aplicação técnica e orientações para tornar o ambiente menos atrativo. Atendimento a condomínios, empresas e residências.',
     lead:
-      'Escorpiões se escondem em locais escuros e úmidos, entre entulhos, madeira e frestas, e podem causar acidentes graves, principalmente com crianças e idosos. O controle combina aplicação técnica e orientações para o ambiente ficar menos atrativo.',
+      'Escorpiões se escondem em locais escuros e úmidos, entre entulhos, madeira e frestas, e podem causar acidentes graves, principalmente com crianças e idosos. O trabalho combina aplicação técnica e orientações para o ambiente ficar menos atrativo.',
     signsTitle: 'Sinais de risco',
     signs: [
       'Escorpiões vistos em jardins, quintais, banheiros ou garagens.',
@@ -148,7 +149,7 @@ export const pest = {
   text: 'Dedetização, desratização, descupinização, escorpiões e caixa d’água.',
   metaTitle: 'Controle de pragas na Grande São Paulo',
   metaDescription:
-    'Controle de pragas na Grande São Paulo: dedetização, desratização, descupinização, controle de escorpiões e limpeza de caixa d’água, com licenças ANVISA, IBAMA e CETESB e responsável técnico habilitado.',
+    'Controle de pragas na Grande São Paulo: dedetização, desratização, descupinização, escorpiões e limpeza de caixa d’água, com licenças ANVISA, IBAMA e CETESB e responsável técnico habilitado.',
   lead: 'Cada praga pede um método. Começamos entendendo o ambiente para indicar o serviço certo, com equipe uniformizada, EPI completo e responsável técnico habilitado.',
 };
 

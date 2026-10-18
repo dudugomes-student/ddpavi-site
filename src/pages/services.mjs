@@ -23,7 +23,7 @@ const detailPage = (s, { parent, siblings, eyebrow }) => {
     <h1 data-motion="drop" data-delay="0.15">${s.title}</h1>
     <p class="lead" data-motion="rise" data-delay="0.5">${s.lead}</p>
     <div class="btn-row" data-motion="rise" data-delay="0.65">
-      <a class="btn btn--red" href="${quote(s.title)}" target="_blank" rel="noopener">${icon('chat')} Pedir orçamento</a>
+      <a class="btn btn--red" href="${quote(s.quoteLabel || s.title)}" target="_blank" rel="noopener">${icon('chat')} Pedir orçamento</a>
       <a class="btn btn--ghost" href="/contato/">Outras formas de contato</a>
     </div>
   </div>
