@@ -231,3 +231,10 @@
 .hero-card__cta svg { width: 1.2rem; height: 1.2rem; }
 .subhead { margin-block: clamp(3rem, 6vw, 5rem) clamp(1.2rem, 2.5vw, 2rem); }
 .subhead .lead { margin-block-start: .6rem; }
+
+/* Clientes atendidos (home) */
+.clientes-home__grid { display: grid; gap: clamp(1rem, 2.5vw, 1.6rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+.cliente-home { margin: 0; display: grid; gap: .9rem; }
+.cliente-home img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-l); background: var(--ink-850); }
+.cliente-home figcaption h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); text-transform: uppercase; letter-spacing: -.03em; line-height: 1; }
+.cliente-home figcaption p { color: var(--text-2); margin-block-start: .35rem; }

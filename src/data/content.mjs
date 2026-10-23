@@ -142,6 +142,12 @@ export const services = [
   },
 ];
 
+// Clientes atendidos (dados do site anterior, backup-site-antigo). Só nomes e tipo de cliente informados pelo dono.
+export const clients = [
+  { name: 'AlphaPark', type: 'Condomínio empresarial', image: '/img/clientes/alphapark.jpg', alt: 'Fachada do AlphaPark' },
+  { name: 'JM Healthcare', type: 'Hospital de transição', image: '/img/clientes/jm-healthcare.webp', alt: 'Logo da JM Healthcare' },
+];
+
 // As 4 frentes da DDPavi Serviços Integrados, com o mesmo peso. Licenças e responsável técnico valem só para controle de pragas.
 export const pest = {
   slug: 'controle-de-pragas',
