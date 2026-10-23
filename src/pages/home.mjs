@@ -1,7 +1,7 @@
 import { html } from '../lib/html.mjs';
 import { site } from '../config/site.mjs';
 import { waLink, telLink, localBusiness, faqSchema } from '../lib/seo.mjs';
-import { services, otherServices, segments, steps, pillars, homeFaq } from '../data/content.mjs';
+import { services, otherServices, segments, steps, pillars, homeFaq, clients } from '../data/content.mjs';
 import { icon } from '../templates/icons.mjs';
 
 const WA = waLink('Olá! Vim pelo site da DDPavi e gostaria de um orçamento.');
@@ -64,6 +64,18 @@ export const home = () => ({
 <section aria-label="Diferenciais" class="container">
   <div class="trust" data-stagger="0.1">
     ${pillars.map((p) => html`<div class="trust__item" data-motion="rise"><h3>${p.title}</h3><p>${p.text}</p></div>`)}
+  </div>
+</section>
+
+<section class="section clientes-home" aria-labelledby="clientes-title">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Clientes atendidos</p>
+      <h2 id="clientes-title" data-motion="rise">Quem já confia na DDPavi</h2>
+    </div>
+    <div class="clientes-home__grid">
+      ${clients.map((c) => html`<figure class="cliente-home" data-motion="rise"><img src="${c.image}" alt="${c.alt}" width="1080" height="1080" loading="lazy" decoding="async"><figcaption><h3>${c.name}</h3><p>${c.type}</p></figcaption></figure>`)}
+    </div>
   </div>
 </section>
 

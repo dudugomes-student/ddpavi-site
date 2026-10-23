@@ -234,3 +234,10 @@
 .hero-card__list li::before { content: ''; flex: none; width: .6rem; height: .6rem; border-radius: 50%; background: var(--red-500); }
 .hero-card__cta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; border-radius: 99rem; background: var(--red-600); font-weight: 600; }
 .hero-card__cta svg { width: 1.2rem; height: 1.2rem; }
+
+/* Clientes atendidos (home) */
+.clientes-home__grid { display: grid; gap: clamp(1rem, 2.5vw, 1.6rem); grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr)); }
+.cliente-home { margin: 0; display: grid; gap: .9rem; }
+.cliente-home img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-l); background: #fff; }
+.cliente-home figcaption h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); text-transform: uppercase; letter-spacing: -.03em; line-height: 1; }
+.cliente-home figcaption p { color: var(--text-2); margin-block-start: .35rem; }

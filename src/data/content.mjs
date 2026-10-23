@@ -191,3 +191,9 @@ export const homeFaq = [
     a: 'Sim. Atuamos com licenças da ANVISA / Vigilância Sanitária, do IBAMA e da CETESB e com responsável técnico habilitado.',
   },
 ];
+
+// Clientes atendidos (dados do site anterior, branch backup-site-antigo). Só nomes e tipos informados pelo dono.
+export const clients = [
+  { name: 'AlphaPark', type: 'Condomínio empresarial', image: '/img/clientes/alphapark.jpg', alt: 'Fachada do AlphaPark' },
+  { name: 'JM Healthcare', type: 'Hospital de transição', image: '/img/clientes/jm-healthcare.webp', alt: 'Logo da JM Healthcare' },
+];
